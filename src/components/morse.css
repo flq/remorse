@@ -1,0 +1,16 @@
+.morseWord {
+    font-size: 2em;
+    font-family: Consolas;
+    display: flex;
+    flex-direction: row;
+}
+
+.morseToken {
+    background: lightgray;
+    margin: 0 10px 10px 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 3.4em;
+    text-transform: capitalize;
+    box-shadow: 4px 4px 10px;
+}

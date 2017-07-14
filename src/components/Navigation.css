@@ -1,0 +1,26 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+nav a {
+  display: block;
+  text-align: right;
+  font-size: 1.4em;
+  background-color: gray;
+  color: white;
+  text-decoration: none;
+  margin: 0 5px 0 0;
+  padding: 1em 10px 10px 20px;
+  width: 6em;
+  min-height: 2em;
+}
+
+nav a.active {
+  background-color: darkred;
+}
+
+nav a:hover {
+  background-color: black;
+}

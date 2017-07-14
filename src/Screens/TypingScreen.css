@@ -1,0 +1,23 @@
+.typingScreen .userInput {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+.typingScreen .soundButton {
+  font-size: 1.5em;
+}
+
+.typingScreen form {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  margin-bottom: 20px;
+}
+
+.soundControls {
+  display: flex;
+  align-items: center;
+}
+
+.soundControls > * {
+  margin-right: 10px;
+}

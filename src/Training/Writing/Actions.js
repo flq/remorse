@@ -1,15 +1,15 @@
-import { LETTERS, charToMorseCode} from "../components/MorseLib";
+import { LETTERS, charToMorseCode} from "../../components/MorseLib";
 
 export function changeWritingScope(letter) {
   return (dispatch, getState) => {
-    const { lettersInScope } = getState().writing;
+    const { lettersInScope } = getState().train;
     const idx = lettersInScope.indexOf(letter);
     const newScope =
       idx === -1
         ? [...lettersInScope, letter]
         : [...lettersInScope.slice(0, idx), ...lettersInScope.slice(idx + 1)];
     dispatch({
-      type: "CHANGE_WRITING_SCOPE",
+      type: "CHANGE_TRAINING_SCOPE",
       lettersInScope: newScope
     });
   };
@@ -18,7 +18,7 @@ export function changeWritingScope(letter) {
 export function putAllInScope() {
   return (dispatch) => {
     dispatch({
-      type: "CHANGE_WRITING_SCOPE",
+      type: "CHANGE_TRAINING_SCOPE",
       lettersInScope: [...LETTERS]
     });
   }
@@ -27,7 +27,7 @@ export function putAllInScope() {
 export function removeAllFromScope() {
   return (dispatch) => {
     dispatch({
-      type: "CHANGE_WRITING_SCOPE",
+      type: "CHANGE_TRAINING_SCOPE",
       lettersInScope: []
     });
   }
@@ -46,7 +46,7 @@ export function startTraining() {
   return (dispatch, getState) => {
     clearInterval(timer);
     dispatch({type: "START_TRAINING" });
-    timer = setInterval(() => trainingFrame(dispatch, getState().writing), 1000);
+    timer = setInterval(() => trainingFrame(dispatch, getState().train), 1000);
   } 
 }
 
@@ -64,7 +64,7 @@ export function evaluateUserInput(keyCode) {
 
   return (dispatch,getState) => {
 
-    let {currentTraining, lettersInScope} = getState().writing;
+    let {currentTraining, lettersInScope} = getState().train;
     let currentInput = (currentTraining.currentInput || "") + input;
     const expectedMorse = charToMorseCode(currentTraining.currentLetter);
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import './morse.css';
+import './Morse.css';
 import {charToMorseCode} from './MorseLib';
 
 const RENDER_MODES = {

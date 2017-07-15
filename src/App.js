@@ -7,25 +7,24 @@ import { Provider } from "react-redux";
 
 import "./App.css";
 import Navigation from "./components/Navigation";
+import { retrieveObject } from "./components/Utils";
 import appReducer from "./AppReducer";
-import TypingScreen from "./Screens/TypingScreen";
-import WritingScreen from "./WritingScreen/WritingScreen";
+import TypingScreen from "./TypingScreen/TypingScreen";
+import WritingScreen from "./Training/Writing/WritingScreen";
 
-const initialState = localStorage.remorseApplicationState
-  ? JSON.parse(localStorage.remorseApplicationState)
-  : {
-      userInput: "",
-      soundSpeed: 0.8,
-      writing : {
-        lettersInScope: [],
-        trainCount: 20,
-        /*currentTraining: {
+const initialState = retrieveObject("remorseApplicationState") || {
+  userInput: "",
+  soundSpeed: 0.8,
+  train: {
+    lettersInScope: [],
+    trainCount: 20
+    /*currentTraining: {
           currentTime,
           itemsLeft,
 
         }*/
-      }
-    };
+  }
+};
 
 const store = createStore(appReducer, initialState, applyMiddleware(thunk));
 

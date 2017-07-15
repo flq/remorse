@@ -5,11 +5,11 @@ export default function appReducer(state = {}, action) {
     case "CHANGE_SOUND_SPEED":
       return { ...state, soundSpeed: action.soundSpeed };
     case "CHANGE_TRAIN_COUNT":
-      return { ...state, writing: { ...state.writing, trainCount: action.value } };
+      return { ...state, train: { ...state.train, trainCount: action.value } };
     case "START_TRAINING":
       return updateCurrentTraining(state, action, ct => ({
         started: true,
-        itemsLeft: state.writing.trainCount,
+        itemsLeft: state.train.trainCount,
         currentTime: -4
       }));
     case "TRAINING_FRAME":
@@ -43,11 +43,11 @@ export default function appReducer(state = {}, action) {
         currentInput: "",
         ended: true
       }));
-    case "CHANGE_WRITING_SCOPE":
+    case "CHANGE_TRAINING_SCOPE":
       return {
         ...state,
-        writing: {
-          ...state.writing,
+        train: {
+          ...state.train,
           lettersInScope: action.lettersInScope
         }
       };
@@ -59,9 +59,9 @@ export default function appReducer(state = {}, action) {
 function updateCurrentTraining(state, action, fNewCurrentTraining) {
   return {
     ...state,
-    writing: {
-      ...state.writing,
-      currentTraining: fNewCurrentTraining(state.writing.currentTraining, action)
+    train: {
+      ...state.train,
+      currentTraining: fNewCurrentTraining(state.train.currentTraining, action)
     }
   };
 }

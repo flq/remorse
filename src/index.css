@@ -3,3 +3,49 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.toolBox {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+
+.toolBox > h2 {
+  font-size: 1.2em;
+  margin: 2px 5px;
+}
+
+.toolBox > button, .toolBox > a {
+  font-size: 1.2em;
+  margin: 0 5px 0 0;
+  border: 0px;
+  background-color: darkred;
+  font-weight: bold;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.toolBox > a {
+  font-size: 1.2em;
+  margin: 0 5px 0 0;
+  padding: 5px;
+  border: 0px;
+  background-color: darkred;
+  font-weight: bold;
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.toolBox > button[disabled] {
+  background-color: gray;
+}

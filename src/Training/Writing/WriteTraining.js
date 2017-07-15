@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import KeyBinding from "react-keybinding-component";
 import classNames from "classnames";
-import { If } from "../components/Utils";
+import { If, NumberWithUnit } from "../../components/Utils";
 import * as Actions from "./Actions";
 
 function Inner({
@@ -61,18 +61,7 @@ function Results({ results = [] }) {
   );
 }
 
-function NumberWithUnit({ children, unit }) {
-  return (
-    <div className="numberWithUnit">
-      <span>
-        {children}
-      </span>
-      <span>
-        {unit}
-      </span>
-    </div>
-  );
-}
+
 
 function Preparation(currentTime) {
   let text = null;
@@ -104,7 +93,7 @@ function percentageOfSuccess(results) {
 }
 
 const WriteTraining = connect(function(s) {
-  return s.writing.currentTraining || {};
+  return s.train.currentTraining || {};
 }, Actions)(Inner);
 
 export default WriteTraining;

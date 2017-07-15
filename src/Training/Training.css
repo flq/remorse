@@ -1,5 +1,5 @@
 .learningScope {
-  width: 50%;
+  width: 70%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -21,42 +21,6 @@
   color: white;
 }
 
-.toolBox {
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 10px;
-}
-
-.toolBox > h2 {
-  font-size: 1.2em;
-  margin: 2px 5px;
-}
-
-.toolBox > button {
-  font-size: 1.2em;
-  margin: 0 5px 0 0;
-  border: 0px;
-  background-color: darkred;
-  font-weight: bold;
-  color: whitesmoke;
-  cursor: pointer;
-}
-
-.toolBox > a {
-  font-size: 1.2em;
-  margin: 0 5px 0 0;
-  padding: 5px;
-  border: 0px;
-  background-color: darkred;
-  font-weight: bold;
-  color: whitesmoke;
-  cursor: pointer;
-}
-
-.toolBox > button[disabled] {
-  background-color: gray;
-}
-
 .numberWithUnit {
   display: flex;
   flex-direction: column;
@@ -75,19 +39,6 @@
   text-align: right;
   font-size: 0.8em;
   margin: 2px 5px;
-  
-}
-
-#writeTraining > div {
-  display: flex;
-  flex-direction: row;
-}
-
-#writeTraining p {
-  font-size: 3em;
-  background: lightgray;
-  padding: 0.5em;
-  margin-right: 10px;
 }
 
 #results span {

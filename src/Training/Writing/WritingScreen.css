@@ -11,17 +11,3 @@
   padding: 0.5em;
   margin-right: 10px;
 }
-
-#results span {
-  width: 20px;
-  height: 30px;
-  margin-right: 5px;
-}
-
-#results .success {
-  background-color: green;
-}
-
-#results .fail {
-  background-color: red;
-}

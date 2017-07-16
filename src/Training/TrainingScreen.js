@@ -1,11 +1,9 @@
 import React from "react";
-import { connect } from "react-redux";
 import KeyBinding from "react-keybinding-component";
 import classNames from "classnames";
-import { If, NumberWithUnit } from "../../components/Utils";
-import * as Actions from "./Actions";
+import { If, NumberWithUnit } from "../components/Utils";
 
-function Inner({
+export default function TrainingScreen({
   started,
   ended,
   itemsLeft,
@@ -61,8 +59,6 @@ function Results({ results = [] }) {
   );
 }
 
-
-
 function Preparation(currentTime) {
   let text = null;
   if (currentTime > 0) return "";
@@ -91,9 +87,3 @@ function percentageOfSuccess(results) {
   var successes = results.reduce((sum, r) => r ? sum + 1 : sum, 0);
   return ((successes / results.length) * 100).toFixed(2);
 }
-
-const WriteTraining = connect(function(s) {
-  return s.train.currentTraining || {};
-}, Actions)(Inner);
-
-export default WriteTraining;

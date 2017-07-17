@@ -36,12 +36,13 @@ export default function appReducer(state = {}, action) {
         userInput: ""
       }));
     case "TRAINING_ENDED":
-      return updateCurrentTraining(state, action, ct => ({
+      return updateCurrentTraining(state, action, (ct, act) => ({
         ...ct,
         itemsLeft: 0,
         currentLetter: "",
         userInput: "",
-        ended: true
+        ended: true,
+        successRate: act.successRate
       }));
     case "CHANGE_TRAINING_SCOPE":
       return {

@@ -11,16 +11,18 @@ export default function TrainingScreen({
   currentLetter,
   userInput,
   results,
+  successRate,
   expectedInput,
   evaluateUserInput,
-  forceStopTraining
+  forceStopTraining,
+  saveTraining
 }) {
   if (!started) return null;
   return (
     <div id="training">
       <KeyBinding onKey={e => evaluateUserInput(e.key)} />
       <div className="toolBox">
-        <a onClick={forceStopTraining}>Stop the training</a>
+        <button disabled={ended} onClick={forceStopTraining}>Stop the training</button>
         <NumberWithUnit unit="seconds">
           {currentTime}
         </NumberWithUnit>
@@ -33,7 +35,10 @@ export default function TrainingScreen({
       </div>
       <Results results={results} />
       {
-        ended && <h2>Well done, you got { percentageOfSuccess(results) } % right!</h2>
+        ended && <h2>Well done, you got { successRate * 100 } % right!</h2>
+      }
+      {
+        ended && <a id="saveTraining" onClick={saveTraining}>Save Training</a>
       }
       <div>
         <If condition={currentLetter}>
@@ -81,9 +86,4 @@ function Preparation(currentTime) {
       break;
   }
   return text;
-}
-
-function percentageOfSuccess(results) {
-  var successes = results.reduce((sum, r) => r ? sum + 1 : sum, 0);
-  return ((successes / results.length) * 100).toFixed(2);
 }

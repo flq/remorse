@@ -1,6 +1,8 @@
 import { LETTERS } from "../components/MorseLib";
+import { retrieveObject, storeObject } from "../components/Utils";
 
 export default function createTrainingActions({
+  trainDataStorageKey,
   nextLetterProvider,
   inputFromKey,
   expectedInputFromCurrentTrainingSet
@@ -75,7 +77,6 @@ export default function createTrainingActions({
     },
 
     evaluateUserInput(key) {
-      
       const input = inputFromKey(key);
       if (!input) return { type: "NO_OP" };
 
@@ -93,7 +94,10 @@ export default function createTrainingActions({
           if (currentTraining.itemsLeft === 1) {
             // This was the last item in the training!
             clearInterval(timer);
-            dispatch({ type: "TRAINING_ENDED" });
+            dispatch({
+              type: "TRAINING_ENDED",
+              successRate: successRate(getState().train.currentTraining.results)
+            });
           }
         } else {
           dispatch({
@@ -102,6 +106,30 @@ export default function createTrainingActions({
           });
         }
       };
+    },
+
+    saveTraining() {
+      return (dispatch, getState) => {
+        const trainData = getState().train;
+        const dataPoint = {
+          time: new Date(),
+          successRate: trainData.currentTraining.successRate,
+          scopeRatio: (trainData.lettersInScope.length / LETTERS.length).toFixed(2),
+          amount: trainData.trainCount,
+          timeTaken: trainData.currentTraining.currentTime
+        };
+        let trainingData = retrieveObject(trainDataStorageKey) || [];
+        trainingData.push(dataPoint);
+        storeObject(trainDataStorageKey, trainingData);
+        dispatch({
+          type: "TRAINING_STOPPED"
+        });
+      };
     }
   };
+}
+
+function successRate(results) {
+  var successes = results.reduce((sum, r) => (r ? sum + 1 : sum), 0);
+  return (successes / results.length).toFixed(2);
 }

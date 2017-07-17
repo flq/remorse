@@ -1,6 +1,8 @@
 import React from "react";
 
-export const APP_STATE_KEY = "remorseApplicationState";
+export const APP_STATE_KEY = "remorse.state";
+export const APP_READ_TRAINDATA_KEY = "remorse.traindata.read";
+export const APP_WRITE_TRAINDATA_KEY = "remorse.traindata.write";
 
 export function If({ condition, children }) {
   return condition ? children : null;

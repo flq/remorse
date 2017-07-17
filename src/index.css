@@ -25,7 +25,7 @@ body {
   margin: 2px 5px;
 }
 
-.toolBox > button, .toolBox > a {
+.toolBox > button, .toolBox > a, #saveTraining {
   font-size: 1.2em;
   margin: 0 5px 0 0;
   border: 0px;
@@ -48,4 +48,12 @@ body {
 
 .toolBox > button[disabled] {
   background-color: gray;
+  opacity: 0.5;
+}
+
+#saveTraining {
+  background-color: green;
+  color: white;
+  font-weight: bold;
+  padding: 0.8em;
 }

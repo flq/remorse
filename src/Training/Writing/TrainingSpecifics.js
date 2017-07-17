@@ -1,4 +1,4 @@
-import { getRandomInt } from "../../components/Utils";
+import { getRandomInt, APP_WRITE_TRAINDATA_KEY } from "../../components/Utils";
 import createTrainingActions from "../TrainingActions";
 import { charToMorseCode } from "../../components/MorseLib";
 
@@ -12,6 +12,7 @@ function nextLetterProvider(scope) {
 }
 
 const Actions = createTrainingActions({
+  trainDataStorageKey: APP_WRITE_TRAINDATA_KEY,
   nextLetterProvider,
   inputFromKey,
   expectedInputFromCurrentTrainingSet: charToMorseCode

@@ -4,7 +4,7 @@ nav {
   margin-bottom: 20px;
 }
 
-nav a {
+nav > a {
   display: block;
   text-align: right;
   font-size: 1.4em;
@@ -17,10 +17,30 @@ nav a {
   min-height: 2em;
 }
 
-nav a.active {
+nav > a.active {
   background-color: darkred;
 }
 
-nav a:hover {
+nav > a:hover {
   background-color: black;
+}
+
+#globalCommands {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  min-height: 2em;
+  max-width: 3em;
+  background-color: gray;
+}
+
+#globalCommands a {
+  font-size: 1.0em;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  background-color: lightseagreen; 
+  margin: 5px;
+  padding: 5px;
 }

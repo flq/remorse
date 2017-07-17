@@ -29,3 +29,9 @@ export function charToMorseCode(char) {
     return "";
   return lettersToCodes[char.toLowerCase()] || "?";
 }
+
+export function morseCodeToChar(char) {
+  if (!char)
+    return "";
+  return codesToLetters[char.toLowerCase()] || "?";
+}

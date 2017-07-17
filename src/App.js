@@ -7,12 +7,13 @@ import { Provider } from "react-redux";
 
 import "./App.css";
 import Navigation from "./components/Navigation";
-import { retrieveObject } from "./components/Utils";
+import { retrieveObject, APP_STATE_KEY } from "./components/Utils";
 import appReducer from "./AppReducer";
 import TypingScreen from "./TypingScreen/TypingScreen";
 import WritingScreen from "./Training/Writing/WritingScreen";
+import ReadingScreen from "./Training/Reading/ReadingScreen";
 
-const initialState = retrieveObject("remorseApplicationState") || {
+const initialState = retrieveObject(APP_STATE_KEY) || {
   userInput: "",
   soundSpeed: 0.8,
   train: {
@@ -37,6 +38,7 @@ class App extends Component {
             <Navigation />
             <Route path="/typing" component={TypingScreen} />
             <Route path="/test-writing-morse" component={WritingScreen} />
+            <Route path="/test-reading-morse" component={ReadingScreen} />
           </div>
         </Provider>
       </BrowserRouter>

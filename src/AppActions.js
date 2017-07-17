@@ -1,4 +1,5 @@
 import { textAsMorseSound } from "./components/SoundLib";
+import {storeObject, APP_STATE_KEY  } from "./components/Utils";
 
 export function changeMorsedText(userInput) {
   const fragments = userInput.split(" ");
@@ -25,4 +26,11 @@ export function playSound() {
     const { userInput, soundSpeed } = getState();
     textAsMorseSound(userInput, soundSpeed);
   };
+}
+
+export function saveProgress() {
+  return (dispatch, getState) => {
+    storeObject(APP_STATE_KEY, getState());
+    dispatch({type: "NO_OP"});
+  }
 }

@@ -2,7 +2,7 @@ import { LETTERS } from "../components/MorseLib";
 
 export default function createTrainingActions({
   nextLetterProvider,
-  inputFromKeyCode,
+  inputFromKey,
   expectedInputFromCurrentTrainingSet
 }) {
   let timer = null;
@@ -74,13 +74,14 @@ export default function createTrainingActions({
       };
     },
 
-    evaluateUserInput(keyCode) {
-      const input = inputFromKeyCode(keyCode);
+    evaluateUserInput(key) {
+      
+      const input = inputFromKey(key);
       if (!input) return { type: "NO_OP" };
 
       return (dispatch, getState) => {
         let { currentTraining, lettersInScope } = getState().train;
-        let userInput = (currentTraining.currentInput || "") + input;
+        let userInput = (currentTraining.userInput || "") + input;
         const expectedInput = expectedInputFromCurrentTrainingSet(currentTraining.currentLetter);
 
         if (userInput.length === expectedInput.length) {

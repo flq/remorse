@@ -1,19 +1,19 @@
 import { getRandomInt } from "../../components/Utils";
 import createTrainingActions from "../TrainingActions";
-import { charToMorseCode } from "../../components/MorseLib";
+import { charToMorseCode, morseCodeToChar } from "../../components/MorseLib";
 
 function inputFromKey(key) {
-  return key === "." || key === "-" ? key : null;
+  return key;
 }
 
 function nextLetterProvider(scope) {
   const randomIndex = getRandomInt(0, scope.length);
-  return scope[randomIndex];
+  return charToMorseCode(scope[randomIndex]);
 }
 
 const Actions = createTrainingActions({
   nextLetterProvider,
   inputFromKey,
-  expectedInputFromCurrentTrainingSet: charToMorseCode
+  expectedInputFromCurrentTrainingSet: morseCodeToChar
 });
 export default Actions;

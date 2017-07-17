@@ -54,3 +54,15 @@
 #results .fail {
   background-color: red;
 }
+
+#training > div {
+  display: flex;
+  flex-direction: row;
+}
+
+#training p {
+  font-size: 3em;
+  background: lightgray;
+  padding: 0.5em;
+  margin-right: 10px;
+}

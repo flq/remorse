@@ -9,7 +9,7 @@ export default function TrainingScreen({
   itemsLeft,
   currentTime,
   currentLetter,
-  currentInput,
+  userInput,
   results,
   expectedInput,
   evaluateUserInput,
@@ -17,8 +17,8 @@ export default function TrainingScreen({
 }) {
   if (!started) return null;
   return (
-    <div id="writeTraining">
-      <KeyBinding onKey={e => evaluateUserInput(e.keyCode)} />
+    <div id="training">
+      <KeyBinding onKey={e => evaluateUserInput(e.key)} />
       <div className="toolBox">
         <a onClick={forceStopTraining}>Stop the training</a>
         <NumberWithUnit unit="seconds">
@@ -41,9 +41,9 @@ export default function TrainingScreen({
             {currentLetter}
           </p>
         </If>
-        <If condition={currentInput}>
+        <If condition={userInput}>
           <p>
-            {currentInput}
+            {userInput}
           </p>
         </If>
       </div>

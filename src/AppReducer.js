@@ -21,7 +21,7 @@ export default function appReducer(state = {}, action) {
     case "TRAINING_UPDATE":
       return updateCurrentTraining(state, action, (ct, act) => ({
         ...ct,
-        currentInput: act.currentInput
+        userInput: act.userInput
       }));
     case "TRAINING_STOPPED":
       return updateCurrentTraining(state, action, (ct, act) => ({
@@ -33,14 +33,14 @@ export default function appReducer(state = {}, action) {
         itemsLeft: ct.itemsLeft - 1,
         results: [...(ct.results || []), act.succeeded],
         currentLetter: act.nextLetter,
-        currentInput: ""
+        userInput: ""
       }));
     case "TRAINING_ENDED":
       return updateCurrentTraining(state, action, ct => ({
         ...ct,
         itemsLeft: 0,
         currentLetter: "",
-        currentInput: "",
+        userInput: "",
         ended: true
       }));
     case "CHANGE_TRAINING_SCOPE":

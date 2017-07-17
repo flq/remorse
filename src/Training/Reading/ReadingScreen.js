@@ -1,15 +1,18 @@
 import React from "react";
 import { connect } from "react-redux";
 import TrainConfiguration from "../TrainConfiguration";
-import "./WritingScreen.css";
-import WriteTraining from "./WriteTraining";
-import * as Actions from "./Actions";
+import TrainingScreen from "../TrainingScreen";
+import Actions from "./TrainingSpecifics";
+
+const ReadTraining = connect(function(s) {
+  return s.train.currentTraining || {};
+}, Actions)(TrainingScreen);
 
 function Inner(props) {
   return (
-    <section className="readingScreen">
+    <section>
       <TrainConfiguration {...props} />
-      <WriteTraining />
+      <ReadTraining />
     </section>
   );
 }

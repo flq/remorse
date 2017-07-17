@@ -1,5 +1,7 @@
 import React from "react";
 
+export const APP_STATE_KEY = "remorseApplicationState";
+
 export function If({ condition, children }) {
   return condition ? children : null;
 }
@@ -17,7 +19,7 @@ export function NumberWithUnit({ children, unit }) {
   );
 }
 
-const storage = document.localStorage || {
+const storage = window.localStorage || {
   setItem(k, v) {
     this[k] = v;
   },

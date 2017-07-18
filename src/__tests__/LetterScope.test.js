@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import { assert } from "chai";
-import LetterScope from "../components/LetterScope";
+import LetterScope from "../Training/LetterScope";
 import {LETTERS} from "../components/MorseLib";
 
 const div = document.createElement("div");

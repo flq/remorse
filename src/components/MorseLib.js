@@ -35,3 +35,8 @@ export function morseCodeToChar(char) {
     return "";
   return codesToLetters[char.toLowerCase()] || "?";
 }
+
+
+export function calculateMorscore(successRate, scope, amount, timeTaken) {
+  return (successRate * scope * (1.3 * amount / timeTaken)).toFixed(2);
+}

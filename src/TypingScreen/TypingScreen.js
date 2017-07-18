@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import "./TypingScreen.css";
-import * as Actions from "../AppActions";
+import * as Actions from "./Actions";
 import { WordsToMorse } from "../components/Morse";
 
 function Inner({

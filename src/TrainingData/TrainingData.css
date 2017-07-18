@@ -1,0 +1,44 @@
+.tableData {
+  margin-right: 40px;
+}
+
+.tableData h3 {
+  font-size: 1.2em;
+}
+
+.tableData table {
+  border-spacing: 0px;
+}
+
+.tableData th {
+  text-align: left;
+  padding: 5px;
+  padding-right: 10px;
+  font-size: 1.2em;
+  font-weight: bold;
+  border-bottom: 2px solid #111;
+  color: #111;
+}
+
+.tableData td {
+  text-align: left;
+  padding: 5px;
+  padding-right: 10px;
+  border-bottom: 1px solid #333;
+  color: #111;
+}
+
+.tableData tbody:before {
+    content: "-";
+    display: block;
+    line-height: 0.5em;
+    color: transparent;
+}
+
+.tableData tbody tr:hover {
+  background-color: lightgray;
+}
+
+.tableData tr > td {
+  text-align: right;
+}

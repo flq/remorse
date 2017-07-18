@@ -12,6 +12,7 @@ import appReducer from "./AppReducer";
 import TypingScreen from "./TypingScreen/TypingScreen";
 import WritingScreen from "./Training/Writing/WritingScreen";
 import ReadingScreen from "./Training/Reading/ReadingScreen";
+import TrainingDataScreen from "./TrainingData/TrainingDataScreen";
 
 const initialState = retrieveObject(APP_STATE_KEY) || {
   userInput: "",
@@ -39,6 +40,7 @@ class App extends Component {
             <Route path="/typing" component={TypingScreen} />
             <Route path="/test-writing-morse" component={WritingScreen} />
             <Route path="/test-reading-morse" component={ReadingScreen} />
+            <Route path="/training-data" component={TrainingDataScreen} />
           </div>
         </Provider>
       </BrowserRouter>

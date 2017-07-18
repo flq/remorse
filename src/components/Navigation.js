@@ -9,6 +9,7 @@ export default function Navigation() {
       <NavLink to="/typing">Type text</NavLink>
       <NavLink to="/test-writing-morse">Test your writing skills</NavLink>
       <NavLink to="/test-reading-morse">Test your reading skills</NavLink>
+      <NavLink to="/training-data">See your training data</NavLink>
       <GlobalCommands />
     </nav>
   );

@@ -47,6 +47,6 @@ function Inner({
   );
 }
 
-const TypingScreen = connect(s => s, Actions)(Inner);
+const TypingScreen = connect(s => s.typing, Actions)(Inner);
 
 export default TypingScreen;

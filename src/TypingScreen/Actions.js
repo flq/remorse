@@ -22,7 +22,7 @@ export function changeSoundSpeed(soundSpeed) {
 
 export function playSound() {
   return async (dispatch, getState) => {
-    const { userInput, soundSpeed } = getState();
+    const { userInput, soundSpeed } = getState().typing;
     textAsMorseSound(userInput, soundSpeed);
   };
 }

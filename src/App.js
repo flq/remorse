@@ -15,16 +15,18 @@ import ReadingScreen from "./Training/Reading/ReadingScreen";
 import TrainingDataScreen from "./TrainingData/TrainingDataScreen";
 
 const initialState = retrieveObject(APP_STATE_KEY) || {
-  userInput: "",
-  soundSpeed: 0.8,
+  typing: {
+    userInput: "",
+    soundSpeed: 0.8
+  },
   train: {
     lettersInScope: [],
     trainCount: 20
     /*currentTraining: {
           currentTime,
           itemsLeft,
-
-        }*/
+          ...
+      }*/
   }
 };
 

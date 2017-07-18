@@ -35,7 +35,7 @@ const store = createStore(appReducer, initialState, applyMiddleware(thunk));
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.REACT_APP_BASENAME}>
         <Provider store={store}>
           <div id="root">
             <Navigation />

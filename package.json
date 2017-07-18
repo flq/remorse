@@ -2,7 +2,7 @@
   "name": "remorse",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://flq.github.io/remorse",
+  "homepage": "http://realfiction.net/remorse",
   "dependencies": {
     "classnames": "^2.2.5",
     "lodash": "^4.17.4",

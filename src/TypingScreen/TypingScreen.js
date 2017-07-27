@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import "./TypingScreen.css";
 import * as Actions from "./Actions";
-import { WordsToMorse } from "../components/Morse";
+import { WordsToMorse } from "./Morse";
 
 function Inner({
   userInput = "",

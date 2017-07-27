@@ -1,6 +1,6 @@
 import React from 'react';
 import './Morse.css';
-import {charToMorseCode} from './MorseLib';
+import {charToMorseCode} from '../components/MorseLib';
 
 const RENDER_MODES = {
   morse: 1,
@@ -10,7 +10,7 @@ const RENDER_MODES = {
 const RENDER_BOTH = RENDER_MODES.char | RENDER_MODES.morse;
 
 
-export function MorseWord({ word }) {
+function MorseWord({ word }) {
   const morseChars = Array
     .from(word)
     .map((c, i) => <MorseChar key={i} char={c} />);
@@ -30,8 +30,8 @@ export function WordsToMorse({ text }) {
 export function MorseChar({ char, renderMode = RENDER_BOTH }) {
   return (
     <div className="morseToken">
-      {(renderMode & RENDER_MODES.char) ? <span className="morseChar">{char}</span> : null}
-      {(renderMode & RENDER_MODES.morse) ? <span className="morseCode">{charToMorseCode(char)}</span> : null}
+      {(renderMode & RENDER_MODES.char) && <span className="morseChar">{char}</span> }
+      {(renderMode & RENDER_MODES.morse) && <span className="morseCode">{charToMorseCode(char)}</span> }
     </div>
   );
 }

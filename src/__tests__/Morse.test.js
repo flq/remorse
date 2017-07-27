@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { assert } from 'chai';
-import { MorseChar } from '../components/Morse';
+import { MorseChar } from '../TypingScreen/Morse';
 
 const div = document.createElement('div');
 

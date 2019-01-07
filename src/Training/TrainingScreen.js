@@ -38,7 +38,7 @@ export default function TrainingScreen({
         ended && <h2>Well done, you got { successRate * 100 } % right!</h2>
       }
       {
-        ended && <a id="saveTraining" onClick={saveTraining}>Save Training</a>
+        ended && <button id="saveTraining" onClick={saveTraining}>Save Training</button>
       }
       <div>
         <If condition={currentLetter}>

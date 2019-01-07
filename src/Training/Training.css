@@ -5,7 +5,7 @@
   justify-content: center;
 }
 
-.learningScope > a {
+.learningScope > button {
   font-family: consolas;
   font-size: 1.2em;
   display: block;

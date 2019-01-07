@@ -39,17 +39,6 @@ body {
   cursor: pointer;
 }
 
-.toolBox > a {
-  font-size: 1.2em;
-  margin: 0 5px 0 0;
-  padding: 5px;
-  border: 0px;
-  background-color: darkred;
-  font-weight: bold;
-  color: whitesmoke;
-  cursor: pointer;
-}
-
 .toolBox > button[disabled] {
   background-color: gray;
   opacity: 0.5;

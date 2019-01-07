@@ -43,7 +43,7 @@ nav.sub > a {
   
 }
 
-#globalCommands a {
+#globalCommands button {
   font-size: 1.3em;
   font-weight: bold;
   color: white;
@@ -53,11 +53,11 @@ nav.sub > a {
   padding: 5px;
 }
 
-#globalCommands a:hover {
+#globalCommands button:hover {
   background-color: darkred;
 }
 
-#globalCommands a:active {
+#globalCommands button:active {
   background-color: black;
 }
 

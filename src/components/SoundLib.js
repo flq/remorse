@@ -30,6 +30,7 @@ try {
 }
 
 export async function textAsMorseSound(input, soundSpeed) {
+  await audioCtx.resume();
   for (let c of Array.from(input)) {
     var code = charToMorseCode(c);
     await asyncPlayMorse(Array.from(code), soundSpeed);

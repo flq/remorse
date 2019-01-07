@@ -5,7 +5,6 @@ import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 
-import "./App.css";
 import Navigation from "./components/Navigation";
 import { retrieveObject, APP_STATE_KEY } from "./components/Utils";
 import appReducer from "./AppReducer";

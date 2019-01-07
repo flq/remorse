@@ -20,8 +20,8 @@ export default function LetterScope({ scope, changeWritingScope }) {
 function LetterSelector({ letter, inScope, selectLetter }) {
   const classes = classNames({ inScope });
   return (
-    <a className={classes} onClick={selectLetter}>
+    <button className={classes} onClick={selectLetter}>
       {letter}
-    </a>
+    </button>
   );
 }

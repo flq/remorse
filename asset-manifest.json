@@ -1,6 +1,13 @@
 {
-  "main.css": "static/css/main.52193bb5.css",
-  "main.css.map": "static/css/main.52193bb5.css.map",
-  "main.js": "static/js/main.afcd1547.js",
-  "main.js.map": "static/js/main.afcd1547.js.map"
+  "main.css": "/remorse/static/css/main.3051ed8b.chunk.css",
+  "main.js": "/remorse/static/js/main.944da76d.chunk.js",
+  "main.js.map": "/remorse/static/js/main.944da76d.chunk.js.map",
+  "static/js/1.54da880d.chunk.js": "/remorse/static/js/1.54da880d.chunk.js",
+  "static/js/1.54da880d.chunk.js.map": "/remorse/static/js/1.54da880d.chunk.js.map",
+  "runtime~main.js": "/remorse/static/js/runtime~main.6f1cd80b.js",
+  "runtime~main.js.map": "/remorse/static/js/runtime~main.6f1cd80b.js.map",
+  "static/css/main.3051ed8b.chunk.css.map": "/remorse/static/css/main.3051ed8b.chunk.css.map",
+  "index.html": "/remorse/index.html",
+  "precache-manifest.bb17e66790fca6e15d3c75e803c9b30a.js": "/remorse/precache-manifest.bb17e66790fca6e15d3c75e803c9b30a.js",
+  "service-worker.js": "/remorse/service-worker.js"
 }

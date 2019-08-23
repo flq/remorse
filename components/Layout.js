@@ -9,12 +9,15 @@ const Layout = ({ header, children }) => (
     </Head>
 
     <Nav />
-    {children}
+    <main>{children}</main>
     <style jsx global>{`
       body {
         margin: 20px;
         padding: 0;
         font-family: sans-serif;
+      }
+      main {
+        padding-top: 2rem;
       }
     `}</style>
   </div>

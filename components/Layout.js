@@ -3,23 +3,31 @@ import Head from "next/head";
 import Nav from "./nav";
 
 const Layout = ({ header, children }) => (
-  <div>
+  <div className="outer">
     <Head>
       <title>{header}</title>
     </Head>
-
-    <Nav />
-    <main>{children}</main>
-    <style jsx global>{`
-      body {
-        margin: 20px;
-        padding: 0;
-        font-family: sans-serif;
-      }
-      main {
-        padding-top: 2rem;
-      }
-    `}</style>
+    <div className="inner">
+      <Nav />
+      <main>{children}</main>
+      <style jsx global>{`
+        body {
+          margin: 20px;
+          padding: 0;
+          font-family: sans-serif;
+        }
+        main {
+          padding-top: 2rem;
+        }
+        .outer {
+          display: flex;
+          justify-content: center;
+        }
+        .inner {
+          width: 80%;
+        }
+      `}</style>
+    </div>
   </div>
 );
 

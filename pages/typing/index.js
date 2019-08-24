@@ -28,7 +28,7 @@ const Typing = () => {
               onChange={e => changeSoundSpeed(e.currentTarget.value)}
               value={soundSpeed}
             />
-            <span>{soundSpeed * 100} %</span>
+            <span>{soundSpeed * 100}%</span>
             <input
               type="button"
               className="soundButton"
@@ -42,19 +42,23 @@ const Typing = () => {
         <WordsToMorse text={morseText} />
       </section>
       <style jsx>{`
-        .typingScreen .userInput {
-          font-size: 2rem;
-          margin-bottom: 0.5rem;
-        }
-        .typingScreen .soundButton {
+        .typingScreen input {
           font-size: 1.5em;
+          min-width: 40%;
         }
 
         .typingScreen form {
           display: flex;
-          flex-direction: column;
           width: 100%;
-          margin-bottom: 0.5rem;
+          flex-direction: row;
+          flex-wrap: wrap;
+          margin-bottom: 1rem;
+          margin-top: -0.5rem;
+        }
+
+        .typingScreen form > * {
+          margin-right: 0.5rem;
+          margin-top: 0.5rem;
         }
 
         .soundControls {
@@ -62,8 +66,12 @@ const Typing = () => {
           align-items: center;
         }
 
+        .soundControls > span {
+          min-width: 4rem;
+        }
+
         .soundControls > * {
-          margin-right: 10px;
+          margin-right: 0.5rem;
         }
       `}</style>
     </Layout>

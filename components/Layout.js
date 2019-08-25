@@ -15,6 +15,7 @@ const Layout = ({ header, children }) => (
           margin: 20px;
           padding: 0;
           font-family: sans-serif;
+          --active-color: #af0000;
         }
         main {
           padding-top: 2rem;

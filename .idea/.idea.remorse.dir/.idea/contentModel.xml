@@ -12,6 +12,7 @@
         <e p="istanbul-lib-report" t="IncludeRecursive" />
         <e p="yargs-parser" t="IncludeRecursive" />
       </e>
+      <e p="node_modules\classnames" t="IncludeRecursive" />
       <e p="node_modules\jest" t="IncludeRecursive" />
       <e p="node_modules\next" t="IncludeRecursive" />
       <e p="node_modules\react" t="IncludeRecursive" />

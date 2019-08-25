@@ -48,8 +48,8 @@ const Nav = () => {
         }
         .main-navigation > :global(span) {
           padding-left: 0.5rem;
-          color: #af0000;
-          border-left: 0.5rem solid #af0000;
+          color: var(--active-color);
+          border-left: 0.5rem solid var(--active-color);
         }
       `}</style>
     </nav>

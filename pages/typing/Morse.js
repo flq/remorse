@@ -1,4 +1,5 @@
 import React from "react";
+import classNames from "classnames";
 import { charToMorseCode } from "../../lib/morse";
 
 const RENDER_MODES = {
@@ -9,15 +10,14 @@ const RENDER_MODES = {
 const RENDER_BOTH = RENDER_MODES.char | RENDER_MODES.morse;
 
 export function MorseChar({ char, renderMode = RENDER_BOTH, highlighted }) {
+  const className = classNames({ highlight: highlighted });
   return (
     <div className="morseToken">
       {renderMode & RENDER_MODES.char && (
-        <span className={highlighted ? "highlight" : undefined}>{char}</span>
+        <span className={className}>{char}</span>
       )}
       {renderMode & RENDER_MODES.morse && (
-        <span className={highlighted ? "highlight" : undefined}>
-          {charToMorseCode(char)}
-        </span>
+        <span className={className}>{charToMorseCode(char)}</span>
       )}
       <style jsx>
         {`
@@ -31,7 +31,7 @@ export function MorseChar({ char, renderMode = RENDER_BOTH, highlighted }) {
             box-shadow: 4px 4px 10px;
           }
           .highlight {
-            background: #af0000;
+            background: var(--active-color);
             color: white;
           }
         `}

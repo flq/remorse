@@ -1,10 +1,16 @@
 import React, { useState } from "react";
 import Layout from "../../components/Layout";
-import { WordsToMorse } from "./Morse";
+import { getWordsWithStartAndEndIndex, WordsToMorse } from "./Morse";
+import { textAsMorseSound } from "../../lib/sound";
 
 const Typing = () => {
   const [morseText, changeMorseText] = useState("");
   const [soundSpeed, changeSoundSpeed] = useState(1.0);
+  const [disabledDueToSoundPlay, setPlayingSound] = useState(false);
+  const [highlightedCharacterIndex, setHighlightedCharacterIndex] = useState(
+    null
+  );
+  const [wordIndexTuples, setWordIndexTuples] = useState(null);
 
   return (
     <Layout header="Learn to morse">
@@ -13,6 +19,7 @@ const Typing = () => {
           <input
             autoFocus
             type="text"
+            disabled={disabledDueToSoundPlay}
             className="userInput"
             autoComplete="off"
             value={morseText}
@@ -22,6 +29,7 @@ const Typing = () => {
           <div className="soundControls">
             <input
               type="range"
+              disabled={disabledDueToSoundPlay}
               max="1.0"
               min="0.3"
               step="0.1"
@@ -32,14 +40,28 @@ const Typing = () => {
             <input
               type="button"
               className="soundButton"
+              disabled={disabledDueToSoundPlay}
               value="&#128266;"
-              onClick={() => {
-                /* TODO Play Sound */
+              onClick={async () => {
+                setPlayingSound(true);
+                setWordIndexTuples(getWordsWithStartAndEndIndex(morseText));
+                await textAsMorseSound(
+                  morseText,
+                  soundSpeed,
+                  setHighlightedCharacterIndex
+                );
+                setPlayingSound(false);
+                setHighlightedCharacterIndex(null);
+                setWordIndexTuples(null);
               }}
             />
           </div>
         </form>
-        <WordsToMorse text={morseText} />
+        <WordsToMorse
+          text={morseText}
+          highlightedCharacterIndex={highlightedCharacterIndex}
+          wordIndexTuples={wordIndexTuples}
+        />
       </section>
       <style jsx>{`
         .typingScreen input {
@@ -72,6 +94,10 @@ const Typing = () => {
 
         .soundControls > * {
           margin-right: 0.5rem;
+        }
+
+        .soundButton:disabled {
+          opacity: 0.6;
         }
       `}</style>
     </Layout>

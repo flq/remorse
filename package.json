@@ -12,7 +12,8 @@
     "classnames": "^2.2.6",
     "next": "9.0.4",
     "react": "16.9.0",
-    "react-dom": "16.9.0"
+    "react-dom": "16.9.0",
+    "react-keybinding-component": "^1.0.0"
   },
   "devDependencies": {
     "jest": "^24.9.0",

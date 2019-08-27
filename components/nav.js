@@ -14,14 +14,14 @@ const Nav = () => {
         isActive={router.pathname.endsWith("typing")}
       />
       <ActiveLink
-        href="/test-writing-morse"
+        href="/test/writing"
         text="Test your writing skills"
-        isActive={router.pathname.endsWith("test-writing-morse")}
+        isActive={router.pathname.endsWith("writing")}
       />
       <ActiveLink
-        href="/test-reading-morse"
+        href="/test/reading"
         text="Test your reading skills"
-        isActive={router.pathname.endsWith("test-reading-morse")}
+        isActive={router.pathname.endsWith("reading")}
       />
       <ActiveLink
         href="/progress"

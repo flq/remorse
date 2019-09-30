@@ -8,8 +8,10 @@ const LetterScope = ({ scope, onChangeWritingScope }) => {
   return (
     <section>
       <div className="scopeActions">
-        <ScopeButton>All</ScopeButton>
-        <ScopeButton>None</ScopeButton>
+        <ScopeButton onClick={trainingRun.actions.putAllInScope}>
+          All
+        </ScopeButton>
+        <ScopeButton onClick={trainingRun.actions.clearScope}>None</ScopeButton>
       </div>
       <div className="letters">
         {LETTERS.map(l => (
@@ -24,6 +26,7 @@ const LetterScope = ({ scope, onChangeWritingScope }) => {
       <style jsx>{`
         section {
           display: flex;
+          flex-direction: row;
           justify-content: center;
         }
         .letters {
@@ -59,6 +62,7 @@ const ScopeButton = ({ children, active, ...stuff }) => (
         color: white;
         border: 0;
         border-radius: 0.5rem;
+        outline: none;
       }
       button:hover {
         cursor: pointer;
@@ -70,6 +74,7 @@ const ScopeButton = ({ children, active, ...stuff }) => (
       }
       .active {
         background-color: var(--active-color);
+        box-shadow: inset 1px -1px 9px 2px darkcyan;
       }
     `}</style>
   </button>

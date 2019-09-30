@@ -4,17 +4,20 @@ import Results from "./Results";
 import NumberWithUnit from "./NumberWithUnit";
 import TrainingRun from "./TrainingRun";
 import LetterScope from "./LetterScope";
+import TrainingRunContext from "./TrainingRunContext";
 
 const TestReading = () => (
   <Layout header="Test your reading">
-    <p>Read</p>
-    <LetterScope
-      scope={["a"]}
-      onChangeWritingScope={l => {
-        console.log(l);
-      }}
-    />
-    <TrainingRun />
+    <TrainingRunContext>
+      <h2>Select the letters you want to train</h2>
+      <LetterScope
+        scope={["a"]}
+        onChangeWritingScope={l => {
+          console.log(l);
+        }}
+      />
+      <TrainingRun />
+    </TrainingRunContext>
   </Layout>
 );
 
